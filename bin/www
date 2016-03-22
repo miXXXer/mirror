@@ -7,7 +7,9 @@
 var app = require('../app');
 var debug = require('debug')('Mir:server');
 var http = require('http');
-
+var request = require("request")
+var io = require('socket.io');
+var cron = require('cron');
 /**
  * Get port from environment and store in Express.
  */
@@ -28,6 +30,12 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+console.log('Port: ' + port);
+
+var io = io.listen(server.listen(port));
+
+
+
 
 /**
  * Normalize a port into a number, string, or false.
@@ -88,3 +96,34 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+
+
+io.on('connection', function (socket) {
+    var socketId = socket.id;
+    var clientIp = socket.request.connection.remoteAddress;
+    console.log('New connection ' + socketId + ' - ' + clientIp);
+    getForecast();
+});
+
+
+var getForecast = function() {
+   var url = "http://api.openweathermap.org/data/2.5/forecast?q=Wroclaw&units=metric&appid=b1b15e88fa797225412429c1c50c122a";
+
+    request({
+        url: url,
+        json: true
+    }, function (error, response, body) {
+
+        if (!error && response.statusCode === 200) {
+            io.emit('weather', body);
+            console.log('weather');
+        }
+    });
+}
+
+var weatherCron = cron.job("* 1 * * * *", function(){
+    getForecast();
+}); 
+
+weatherCron.start();

@@ -1,8 +1,26 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #000;
+}
+
+* {
+    color: #FFFFFF;
 }
 
 a {
   color: #00B7FF;
+}
+.date-info {
+    position: absolute;
+    top:10px;
+    right: 10px;
+    text-align: center;
+}
+
+.date-info .timer {
+    font-size: 30px;
+}
+
+.date-info .date {
+    color:#FFF900;
 }
