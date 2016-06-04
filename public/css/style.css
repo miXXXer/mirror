@@ -1,0 +1,60 @@
+body {
+  background: #000;
+  position: fixed;
+  height:100%;
+  width:100%;
+}
+
+* {
+    color: #FFFFFF;
+}
+
+a {
+  color: #00B7FF;
+}
+.date-info {
+    position: absolute;
+    top:10px;
+    right: 10px;
+    text-align: center;
+}
+
+.date-info .timer {
+    font-size: 30px;
+}
+
+.date-info .date {
+    color:#FFF900;
+}
+
+.temp-container {
+    width: 400px;
+    height: 150px;
+    position: absolute;
+    bottom:0px;
+    right:0px;
+}
+
+
+.forecast-table {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    width: auto;
+}
+
+
+.forecast-container {
+  background: #323544 none repeat scroll 0 0;
+  border-radius: 10px;
+  display: table;
+  margin-bottom: 50px;
+  overflow: hidden;
+  table-layout: fixed;
+  width: auto;
+  margin-top: 0px;
+}
+
+.container {
+  width: auto;
+}

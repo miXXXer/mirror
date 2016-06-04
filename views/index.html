@@ -4,21 +4,106 @@
         <title>Mirror</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/stylesheets/style.css" rel="stylesheet" type="text/css"/>
-        <link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/tamplate.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script type="text/javascript" src="/javascripts/scripts.js"></script>
-        <script type="text/javascript" src="/javascripts/sockets.js"></script>
+        <script type="text/javascript" src="/js/scripts.js"></script>
+        <script type="text/javascript" src="/js/sockets.js"></script>
         <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
     </head>
     <body>
-        <div class="date-info">
-            <div class="timer"></div>
-            <div class="date"></div>
-        </div>
-        
-        <div class="weather-info">
-            <div class="last-update"></div>
+        <div class="site-content">
+            <div class="date-info">
+                <div class="timer"></div>
+                <div class="date"></div>
+            </div>
+
+            <div class="forecast-table">
+                <div class="container">
+                    <div class="forecast-container">
+                        <div class="today forecast">
+                            <div class="forecast-header">
+                                <div class="day">Aktualna pogoda</div>
+                                <div class="date"></div>
+                            </div> <!-- .forecast-header -->
+                            <div class="forecast-content">
+                                <div class="location">Wrocław</div>
+                                <div class="degree">
+                                    <div class="num">23<sup>o</sup>C</div>
+                                    <div class="forecast-icon">
+                                        <img width="90" alt="" src="images/icons/icon-1.svg">
+                                    </div>	
+                                </div>
+                                <span><img alt="" src="images/icon-umberella.png"><span class="rain">20%</span></span>
+                                <span><img alt="" src="images/icon-wind.png"><span class="wind">18</span>km/h</span>
+                                <span><img alt="" src="images/icon-compass.png"><span class="wind-direction">East</span></span>
+                            </div>
+                        </div>
+                        <div class="forecast ftime1">
+                            <div class="forecast-header">
+                                <div class="day">Tuesday</div>
+                            </div> <!-- .forecast-header -->
+                            <div class="forecast-content">
+                                <div class="forecast-icon">
+                                    <img width="48" alt="" src="images/icons/icon-3.svg">
+                                </div>
+                                <div class="degree">23<sup>o</sup>C</div>
+                                <small><span class="min-deg">18</span><sup>o</sup></small>
+                            </div>
+                        </div>
+                        <div class="forecast ftime2">
+                            <div class="forecast-header">
+                                <div class="day">Tuesday</div>
+                            </div> <!-- .forecast-header -->
+                            <div class="forecast-content">
+                                <div class="forecast-icon">
+                                    <img width="48" alt="" src="images/icons/icon-3.svg">
+                                </div>
+                                <div class="degree">23<sup>o</sup>C</div>
+                                <small><span class="min-deg">18</span><sup>o</sup></small>
+                            </div>
+                        </div>
+                        <div class="forecast ftime3">
+                            <div class="forecast-header">
+                                <div class="day">Tuesday</div>
+                            </div> <!-- .forecast-header -->
+                            <div class="forecast-content">
+                                <div class="forecast-icon">
+                                    <img width="48" alt="" src="images/icons/icon-3.svg">
+                                </div>
+                                <div class="degree">23<sup>o</sup>C</div>
+                                <small><span class="min-deg">18</span><sup>o</sup></small>
+                            </div>
+                        </div>
+                        <div class="forecast ftime4">
+                            <div class="forecast-header">
+                                <div class="day">Tuesday</div>
+                            </div> <!-- .forecast-header -->
+                            <div class="forecast-content">
+                                <div class="forecast-icon">
+                                    <img width="48" alt="" src="images/icons/icon-3.svg">
+                                </div>
+                                <div class="degree"><span>23</span><sup>o</sup>C</div>
+                                <small><span class="min-deg">18</span><sup>o</sup></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="temp-container">
+                <div id="piTemperature" style="min-width: 400px; height: 150px; margin: 0 auto"></div>
+            </div>
+
+
+            <div class="weather-info">
+                <div class="last-update"></div>
+            </div>
         </div>
     </body>
 </html>

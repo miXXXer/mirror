@@ -6,15 +6,18 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "cron" : "latest",
-    "request" : "latest",
-    "socket.io": "latest",
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
+    "cron": "latest",
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "jade": "~1.11.0",
+    "math-statistics": "^1.2.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "r-pi-usonic": "^2.5.0",
+    "readline": "^1.3.0",
+    "request": "latest",
+    "serve-favicon": "~2.3.0",
+    "socket.io": "latest"
   }
 }
